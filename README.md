@@ -1,10 +1,24 @@
+[![Innkside Logo](https://innkside.now.sh/logo.png)](https://innkside.now.sh)
+
+
 # Innkside JavaScript Library (preview)
 
 This is a preview of how will work the innkside javascript library **this library is not publised on npm yet**
 
-## Usage
-One of the objectives of this project is to make product creators and startups be able access to an efficient micropayment service quickly and easily.
-Due to this We'll provide initially just 3 methods to work with this library.
+## Features
+
+  * Easy to use
+  * Fast
+  * Secure
+  * Cheap
+  * Descentralized
+  
+ ## Philosophy
+
+  This tool is born from a real problem all developers and founders has faced when they want to implement a payment system.
+
+  We want to fulfill a mission. **To make a tool really easy to implement and at the same time it helps the business grow.**  
+  
 
 ### Initialize Client
 This method will initialize the environment of the library to work with the rest of the methods, will be needed to provide an api key. You will be able to get one on the innkside dashboard.
@@ -64,7 +78,7 @@ const fiat = 50
 const innksideId = // get it from getCredentials method
 const wallet_address = //get it from getCredentials method
 
-innkside.exchage(id, fiat, walled_address)
+innkside.exchage(id, fiat, wallet_address)
 
 //response
 /*
@@ -76,3 +90,21 @@ innkside.exchage(id, fiat, walled_address)
 }
 */
 ```
+
+### Execute a transaction
+This method will allow your users to make transactions inside your app with the coins they have exchanged, You can implement this method in different ways, for example: Your users can purchase assets inside your business application.
+
+More interesting, if your app is an shared economy application, you can programatically execute different values transactions, so a percentage of the coins go to the service provider and the other one is yours.
+
+```js
+innkside.transact(id, value, sender, addressee ) //yo'll be able to use async await with all methods
+
+/*
+{
+  executed: true,
+  value: 50,
+  ...
+}
+*/
+```
+
